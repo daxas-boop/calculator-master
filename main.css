@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+#container {
+    width: 40%;
+    min-width: 400px;
+    height: 80vh;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 15px;
+    display: grid;
+    background: rgb(207,91,132);
+    background: radial-gradient(circle, rgba(207,91,132,0.8827906162464986) 0%, rgba(63,206,251,1) 67%, rgba(63,206,251,1) 100%);
+    grid-template-areas: "display display display"
+                         "buttons buttons operators"
+                         "buttons buttons operators";
+    grid-template-rows: 140px;
+    box-shadow: 0px 0px 14px 3px rgba(0,110,143,0.74);
+}
+
+#display {
+    grid-area: display;
+    box-shadow: 0 5px 5px -5px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 2rem;
+}
+
+#display #display-current {
+    margin: 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#display #display-previous {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+#operators {
+    grid-area: operators;
+    display: grid;
+}
+
+#buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 5px 0px 5px -7px black;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(44, 44, 44);
+    outline:none;
+}
+
+.button:hover {
+    box-shadow: inset -16px -2px 188px 200px rgba(0,0,0,0.10);
+}
+
+.button:active{
+    border-style: inset;
+}
+
+.operator {
+    color: yellow;
+}
+
+@media (max-width: 768px){
+    #container {
+    width: 80%;
+    min-width: 200px;
+    }
+}
