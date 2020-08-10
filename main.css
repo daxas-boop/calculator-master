@@ -33,11 +33,16 @@
 #display #display-current {
     margin: 10px 20px;
     font-family: Arial, Helvetica, sans-serif;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 #display #display-previous {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
+    margin-right: 20px;
+    font-style: oblique;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #operators {
@@ -48,7 +53,6 @@
 #buttons {
     grid-area: buttons;
     display: grid;
-    grid-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     box-shadow: 5px 0px 5px -7px black;
 }
@@ -57,10 +61,10 @@
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    border-radius: 50%;
     color: white;
-    text-shadow: 2px 2px 4px rgb(44, 44, 44);
+    text-shadow: 2px 2px 4px 2px rgb(44, 44, 44);
     outline:none;
+    box-shadow: inset 4px 4px 3px -5px black;
 }
 
 .button:hover {
@@ -72,7 +76,7 @@
 }
 
 .operator {
-    color: yellow;
+    color: rgb(255, 8, 0);
 }
 
 @media (max-width: 768px){
