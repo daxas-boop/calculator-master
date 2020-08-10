@@ -14,11 +14,14 @@ function appendNumber(e) {
 
 function getOperator(e){
   if(currentNumber === '') return
-  operator = e.target.innerText.toString();
-  if(operator){
-    previousNumber = currentNumber;
-    currentNumber = '';
+  if(operator !== ''){
+    calculate();
   }
+
+  operator = e.target.innerText.toString();
+  previousNumber = currentNumber;
+  currentNumber = '';
+
 }
 
 function calculate() {
@@ -69,6 +72,7 @@ function inputManager() {
   const $operators = document.querySelectorAll('#operators .operator');
   $operators.forEach((operator) => {
     operator.addEventListener('click', (e) => {
+    debugger
       getOperator(e);
       updateDisplay();
     });
@@ -82,6 +86,7 @@ function inputManager() {
 
   const $equals = document.querySelector('#equals')
   $equals.addEventListener('click', () => {
+
     calculate();
     updateDisplay();
   });
