@@ -13,7 +13,7 @@ function appendNumber(e) {
 }
 
 function getOperator(e){
-  if(currentNumber === null) return
+  if(currentNumber === '') return
   operator = e.target.innerText.toString();
   if(operator){
     previousNumber = currentNumber;
@@ -22,7 +22,32 @@ function getOperator(e){
 }
 
 function calculate() {
-
+  if(previousNumber && currentNumber){
+    switch (operator){
+      case '+':
+        currentNumber = parseInt(previousNumber) + parseInt(currentNumber);
+        previousNumber = '';
+        operator = '';
+        break;
+      case '-':
+        currentNumber = parseInt(previousNumber) - parseInt(currentNumber);
+        previousNumber = '';
+        operator = '';
+        break;
+      case '*':
+        currentNumber = parseInt(previousNumber) * parseInt(currentNumber);
+        previousNumber = '';
+        operator = '';
+        break;
+      case '/':
+        currentNumber = parseInt(previousNumber) / parseInt(currentNumber);
+        previousNumber = '';
+        operator = '';
+        break;
+      default:
+        console.log('default');
+    }
+  }
 }
 
 function updateDisplay() {
