@@ -3,8 +3,9 @@ let previousNumber = '';
 let currentNumber = '';
 
 function changeSign(){
+  currentNumber = currentNumber.toString();
   if(currentNumber && currentNumber.includes('-')) {
-    Math.abs(currentNumber);
+    currentNumber = Math.abs(currentNumber);
   } else {
     currentNumber = - currentNumber  
   }
@@ -22,6 +23,7 @@ function clearEntry(){
 
 
 function appendNumber(e) {
+  if(currentNumber == Number.POSITIVE_INFINITY || currentNumber == Number.NEGATIVE_INFINITY) return
   let number = e.target.textContent.toString();
   if(number === '+/-') return;
   if(number === '.' && currentNumber.includes('.')) return;
@@ -29,7 +31,8 @@ function appendNumber(e) {
 }
 
 function getOperator(e){
-  if(currentNumber === '') return
+  if(currentNumber === '' ||currentNumber == Number.POSITIVE_INFINITY ||
+    currentNumber == Number.NEGATIVE_INFINITY) return
   if(previousNumber !== ''){
     calculate();
   }
@@ -40,7 +43,7 @@ function getOperator(e){
 }
 
 function calculate() {
-  if(previousNumber && currentNumber){
+  if(previousNumber !== '' && currentNumber !== ''){
     switch (operator){
       case '+':
         currentNumber = parseFloat(previousNumber) + parseFloat(currentNumber);
