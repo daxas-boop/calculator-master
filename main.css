@@ -43,6 +43,8 @@
     margin-right: 20px;
     font-style: oblique;
     color: rgba(0, 0, 0, 0.6);
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 #operators {
