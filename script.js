@@ -27,6 +27,7 @@ function appendNumber(e) {
   let number = e.target.textContent.toString();
   if(number === '+/-') return;
   if(number === '.' && currentNumber.includes('.')) return;
+  if(currentNumber.length === 19) return;
   currentNumber += number;
 }
 
